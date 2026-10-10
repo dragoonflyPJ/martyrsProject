@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://csfimmjqok45h"]
+
+[ext_resource type="Texture2D" uid="uid://l2c2j0dcq07r" path="res://testing_scn/battleTest/InterfaceBattle/Border.png" id="1_8estl"]
+[ext_resource type="Texture2D" uid="uid://cq3wjh2aa5wsl" path="res://testing_scn/battleTest/gameAction/ennemyPlataform.png" id="1_kmbgt"]
+[ext_resource type="Texture2D" uid="uid://bk88vs82nopld" path="res://testing_scn/battleTest/InterfaceBattle/buttonPlayer.png" id="2_evgai"]
+[ext_resource type="Texture2D" uid="uid://bkgg46owbsgvm" path="res://testing_scn/battleTest/gameAction/player.png" id="2_kt3j8"]
+[ext_resource type="Texture2D" uid="uid://bf75i7usmk6y" path="res://testing_scn/battleTest/gameAction/ennemy.png" id="3_02mim"]
+[ext_resource type="Texture2D" uid="uid://npbgs3et25as" path="res://testing_scn/battleTest/InterfaceBattle/attack0.png" id="3_ye26h"]
+[ext_resource type="Texture2D" uid="uid://etpnvpyc4a3m" path="res://testing_scn/battleTest/InterfaceBattle/attack1.png" id="4_kmbgt"]
+[ext_resource type="Texture2D" uid="uid://bfcvcf733yn8b" path="res://testing_scn/battleTest/InterfaceBattle/attack2.png" id="5_kt3j8"]
+[ext_resource type="Texture2D" uid="uid://csyvhxpqqo5i" path="res://testing_scn/battleTest/playerMarc.png" id="6_02mim"]
+[ext_resource type="Texture2D" uid="uid://dje25m6j0rhfy" path="res://testing_scn/battleTest/face0.png" id="6_gupnx"]
+[ext_resource type="Texture2D" uid="uid://d2j6gubbbspg2" path="res://testing_scn/battleTest/playerHand.png" id="7_gupnx"]
+[ext_resource type="Texture2D" uid="uid://dt4yfb5jg1jel" path="res://testing_scn/battleTest/face1.png" id="7_ll1ao"]
+
+[sub_resource type="Animation" id="Animation_02mim"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gupnx"]
+_data = {
+&"new_animation": SubResource("Animation_02mim")
+}
+
+[node name="Battle" type="Control" unique_id=1804670353]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="battleAction" type="Control" parent="." unique_id=1789910834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="shadow" type="TextureRect" parent="battleAction" unique_id=1488611026]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kmbgt")
+
+[node name="player" type="TextureRect" parent="battleAction" unique_id=1607947461]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_kt3j8")
+
+[node name="player2" type="TextureRect" parent="battleAction" unique_id=609363796]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_02mim")
+
+[node name="border" type="TextureRect" parent="." unique_id=1755877352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8estl")
+
+[node name="buttonPlayer0" type="TextureRect" parent="." unique_id=826894430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_evgai")
+
+[node name="TextureRect" type="TextureRect" parent="buttonPlayer0" unique_id=391139108]
+layout_mode = 0
+offset_left = 1212.0
+offset_top = 554.0
+offset_right = 1275.0
+offset_bottom = 620.0
+texture = ExtResource("6_gupnx")
+
+[node name="buttonPlayer1" type="TextureRect" parent="." unique_id=1830239893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -83.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_evgai")
+
+[node name="TextureRect" type="TextureRect" parent="buttonPlayer1" unique_id=1845734610]
+layout_mode = 0
+offset_left = 1212.0
+offset_top = 554.0
+offset_right = 1275.0
+offset_bottom = 620.0
+texture = ExtResource("7_ll1ao")
+
+[node name="buttonPlayer2" type="TextureRect" parent="." unique_id=1043625485]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_evgai")
+
+[node name="attackButtons" type="Control" parent="." unique_id=1992173383]
+anchors_preset = 0
+offset_left = 380.0
+offset_top = 478.0
+offset_right = 766.0
+offset_bottom = 726.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="attackButtons" unique_id=1720033861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="attack0" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=446477918]
+layout_mode = 2
+texture = ExtResource("3_ye26h")
+
+[node name="attack1" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=1073520346]
+layout_mode = 2
+texture = ExtResource("4_kmbgt")
+
+[node name="attack2" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=1119784706]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -26)
+texture = ExtResource("5_kt3j8")
+
+[node name="playerComplete" type="TextureRect" parent="." unique_id=1937221740]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_02mim")
+
+[node name="playerHand" type="TextureRect" parent="." unique_id=289479549]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 469.0
+offset_right = 394.0
+offset_bottom = 516.0
+pivot_offset = Vector2(0, 20)
+texture = ExtResource("7_gupnx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2021513172]
+libraries/ = SubResource("AnimationLibrary_gupnx")
