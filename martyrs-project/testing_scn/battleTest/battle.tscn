@@ -1,24 +1,49 @@
 [gd_scene format=3 uid="uid://csfimmjqok45h"]
 
-[ext_resource type="Texture2D" uid="uid://l2c2j0dcq07r" path="res://testing_scn/battleTest/InterfaceBattle/Border.png" id="1_8estl"]
 [ext_resource type="Texture2D" uid="uid://cq3wjh2aa5wsl" path="res://testing_scn/battleTest/gameAction/ennemyPlataform.png" id="1_kmbgt"]
+[ext_resource type="Texture2D" uid="uid://c8c63gw3mg8wr" path="res://testing_scn/battleTest/ennemy0.png" id="2_8estl"]
 [ext_resource type="Texture2D" uid="uid://bk88vs82nopld" path="res://testing_scn/battleTest/InterfaceBattle/buttonPlayer.png" id="2_evgai"]
-[ext_resource type="Texture2D" uid="uid://bkgg46owbsgvm" path="res://testing_scn/battleTest/gameAction/player.png" id="2_kt3j8"]
-[ext_resource type="Texture2D" uid="uid://bf75i7usmk6y" path="res://testing_scn/battleTest/gameAction/ennemy.png" id="3_02mim"]
-[ext_resource type="Texture2D" uid="uid://npbgs3et25as" path="res://testing_scn/battleTest/InterfaceBattle/attack0.png" id="3_ye26h"]
-[ext_resource type="Texture2D" uid="uid://etpnvpyc4a3m" path="res://testing_scn/battleTest/InterfaceBattle/attack1.png" id="4_kmbgt"]
-[ext_resource type="Texture2D" uid="uid://bfcvcf733yn8b" path="res://testing_scn/battleTest/InterfaceBattle/attack2.png" id="5_kt3j8"]
-[ext_resource type="Texture2D" uid="uid://csyvhxpqqo5i" path="res://testing_scn/battleTest/playerMarc.png" id="6_02mim"]
+[ext_resource type="PackedScene" uid="uid://c1srmw2dj56kb" path="res://battleSystem/halk_aestas/halk_aestas_in_battle.tscn" id="5_pf83n"]
 [ext_resource type="Texture2D" uid="uid://dje25m6j0rhfy" path="res://testing_scn/battleTest/face0.png" id="6_gupnx"]
-[ext_resource type="Texture2D" uid="uid://d2j6gubbbspg2" path="res://testing_scn/battleTest/playerHand.png" id="7_gupnx"]
+[ext_resource type="PackedScene" uid="uid://bglldor5t4pb7" path="res://battleSystem/mara_seerose/mara_seerose_in_battle.tscn" id="6_x05en"]
 [ext_resource type="Texture2D" uid="uid://dt4yfb5jg1jel" path="res://testing_scn/battleTest/face1.png" id="7_ll1ao"]
 
-[sub_resource type="Animation" id="Animation_02mim"]
-resource_name = "new_animation"
+[sub_resource type="Animation" id="Animation_8estl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("battleAction/ennemy:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gupnx"]
+[sub_resource type="Animation" id="Animation_evgai"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("battleAction/ennemy:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.45, 0.93333334, 1.3333334, 1.8666667, 2.3833334, 2.6333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -56.78), Vector2(0, -2.845), Vector2(0, -56.69), Vector2(0, -32.36), Vector2(0, -58.08), Vector2(0, 1.725)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ye26h"]
 _data = {
-&"new_animation": SubResource("Animation_02mim")
+&"RESET": SubResource("Animation_8estl"),
+&"new_animation": SubResource("Animation_evgai")
 }
 
 [node name="Battle" type="Control" unique_id=1804670353]
@@ -28,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="battleAction" type="Control" parent="." unique_id=1789910834]
 layout_mode = 1
@@ -36,33 +62,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="shadow" type="TextureRect" parent="battleAction" unique_id=1488611026]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("1_kmbgt")
 
-[node name="player" type="TextureRect" parent="battleAction" unique_id=1607947461]
+[node name="ennemy" type="TextureRect" parent="battleAction" unique_id=464494416]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_kt3j8")
-
-[node name="player2" type="TextureRect" parent="battleAction" unique_id=609363796]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_02mim")
-
-[node name="border" type="TextureRect" parent="." unique_id=1755877352]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_8estl")
+offset_left = 678.0
+offset_top = -38.0
+offset_right = 1218.0
+offset_bottom = 502.0
+scale = Vector2(0.745, 0.745)
+offset_transform_enabled = true
+mouse_filter = 2
+texture = ExtResource("2_8estl")
 
 [node name="buttonPlayer0" type="TextureRect" parent="." unique_id=826894430]
 layout_mode = 1
@@ -71,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_evgai")
 
 [node name="TextureRect" type="TextureRect" parent="buttonPlayer0" unique_id=391139108]
@@ -79,6 +98,7 @@ offset_left = 1212.0
 offset_top = 554.0
 offset_right = 1275.0
 offset_bottom = 620.0
+mouse_filter = 2
 texture = ExtResource("6_gupnx")
 
 [node name="buttonPlayer1" type="TextureRect" parent="." unique_id=1830239893]
@@ -90,6 +110,7 @@ offset_top = -83.0
 offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_evgai")
 
 [node name="TextureRect" type="TextureRect" parent="buttonPlayer1" unique_id=1845734610]
@@ -98,9 +119,11 @@ offset_left = 1212.0
 offset_top = 554.0
 offset_right = 1275.0
 offset_bottom = 620.0
+mouse_filter = 2
 texture = ExtResource("7_ll1ao")
 
 [node name="buttonPlayer2" type="TextureRect" parent="." unique_id=1043625485]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,51 +132,16 @@ offset_top = -168.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_evgai")
 
-[node name="attackButtons" type="Control" parent="." unique_id=1992173383]
-anchors_preset = 0
-offset_left = 380.0
-offset_top = 478.0
-offset_right = 766.0
-offset_bottom = 726.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="attackButtons" unique_id=1720033861]
+[node name="halk_aestas_in_battle" parent="." unique_id=1832431900 instance=ExtResource("5_pf83n")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="attack0" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=446477918]
-layout_mode = 2
-texture = ExtResource("3_ye26h")
+[node name="mara_seerose_in_battle" parent="." unique_id=1227610607 instance=ExtResource("6_x05en")]
+visible = false
+layout_mode = 1
 
-[node name="attack1" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=1073520346]
-layout_mode = 2
-texture = ExtResource("4_kmbgt")
-
-[node name="attack2" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=1119784706]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, -26)
-texture = ExtResource("5_kt3j8")
-
-[node name="playerComplete" type="TextureRect" parent="." unique_id=1937221740]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("6_02mim")
-
-[node name="playerHand" type="TextureRect" parent="." unique_id=289479549]
-layout_mode = 0
-offset_left = 186.0
-offset_top = 469.0
-offset_right = 394.0
-offset_bottom = 516.0
-pivot_offset = Vector2(0, 20)
-texture = ExtResource("7_gupnx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2021513172]
-libraries/ = SubResource("AnimationLibrary_gupnx")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=518449573]
+libraries/ = SubResource("AnimationLibrary_ye26h")
+autoplay = &"new_animation"

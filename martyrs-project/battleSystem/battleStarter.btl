@@ -1,0 +1,10 @@
+PLAYER: Halk_Aestas
+PLAYER: Mara_Seerose
+
+VISIBLE_ENEMY: True
+
+ENEMY_TYPE: normal
+
+ENEMY_NUMBER: 1
+
+*

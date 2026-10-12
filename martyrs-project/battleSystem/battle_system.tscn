@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://3xniiy08ryfs"]
+
+[ext_resource type="Script" uid="uid://de6ywr0ruhari" path="res://battleSystem/battle_systemInterpreter.gd" id="1_qmdna"]
+[ext_resource type="PackedScene" uid="uid://c1srmw2dj56kb" path="res://battleSystem/halk_aestas/halk_aestas_in_battle.tscn" id="2_2gtj5"]
+[ext_resource type="PackedScene" uid="uid://bglldor5t4pb7" path="res://battleSystem/mara_seerose/mara_seerose_in_battle.tscn" id="3_xy2hb"]
+[ext_resource type="PackedScene" uid="uid://brokdmlfk2gsr" path="res://battleSystem/halk_aestas/turn_halk.tscn" id="4_2315y"]
+[ext_resource type="PackedScene" uid="uid://b24btsik6hutw" path="res://battleSystem/mara_seerose/turn_mara.tscn" id="5_4kn55"]
+[ext_resource type="PackedScene" uid="uid://7mk5p6elp31i" path="res://battleSystem/enemys/enemy_angel_0.tscn" id="6_4kn55"]
+
+[node name="battleSystem" type="Control" unique_id=830810056 node_paths=PackedStringArray("preloader")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qmdna")
+battle_path = "C:/Datos/.GodotProjects/martyrsProject/martyrsProject/martyrs-project/battleSystem/battleStarter.btl"
+preloader = NodePath("ResourcePreloader")
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="." unique_id=1003945447]
+resources = [PackedStringArray("Halk_Aestas", "Mara_Seerose", "Turn_Halk_Aestas", "Turn_Mara_Seerose", "enemy_angel_0"), [ExtResource("2_2gtj5"), ExtResource("3_xy2hb"), ExtResource("4_2315y"), ExtResource("5_4kn55"), ExtResource("6_4kn55")]]
+
+[node name="enemy" type="HBoxContainer" parent="." unique_id=799489774]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 1.0
+offset_right = 1070.0
+offset_bottom = 330.0
+alignment = 1
+
+[node name="players" type="Control" parent="." unique_id=1932215818]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="playerTurnOrder" type="VBoxContainer" parent="." unique_id=2134881222]
+layout_mode = 0
+offset_left = 1195.0
+offset_top = 475.0
+offset_right = 1280.0
+offset_bottom = 609.0
+theme_override_constants/separation = 12

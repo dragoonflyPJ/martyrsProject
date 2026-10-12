@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b24btsik6hutw"]
+
+[ext_resource type="Texture2D" uid="uid://qhooulpwoj1y" path="res://battleSystem/mara_seerose/buttonPlayer.png" id="1_ps5p6"]
+[ext_resource type="Texture2D" uid="uid://cvrrngj7dto8b" path="res://battleSystem/mara_seerose/buttonPlayer1.png" id="2_ru6cc"]
+[ext_resource type="Texture2D" uid="uid://bvo7fkakpqc46" path="res://battleSystem/mara_seerose/palyerFace.png" id="3_ru6cc"]
+
+[node name="turnMara" type="TextureButton" unique_id=506461646]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_ps5p6")
+texture_pressed = ExtResource("2_ru6cc")
+texture_hover = ExtResource("2_ru6cc")
+
+[node name="PalyerFace" type="Sprite2D" parent="." unique_id=1944903419]
+position = Vector2(51, 29)
+texture = ExtResource("3_ru6cc")

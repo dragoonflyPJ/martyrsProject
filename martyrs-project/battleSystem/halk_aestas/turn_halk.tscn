@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://brokdmlfk2gsr"]
+
+[ext_resource type="Texture2D" uid="uid://dhtbohgai1u31" path="res://battleSystem/halk_aestas/buttonPlayer.png" id="1_p1klx"]
+[ext_resource type="Texture2D" uid="uid://dulqvtlo2cfsc" path="res://battleSystem/halk_aestas/buttonPlayer1.png" id="2_kh6v6"]
+[ext_resource type="Texture2D" uid="uid://dp834nhu6683l" path="res://battleSystem/halk_aestas/palyerFace.png" id="3_kh6v6"]
+
+[node name="turnHalk" type="TextureButton" unique_id=506461646]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_p1klx")
+texture_pressed = ExtResource("2_kh6v6")
+texture_hover = ExtResource("2_kh6v6")
+
+[node name="PalyerFace" type="Sprite2D" parent="." unique_id=115819267]
+position = Vector2(50, 30)
+texture = ExtResource("3_kh6v6")

@@ -1,0 +1,328 @@
+[gd_scene format=3 uid="uid://c1srmw2dj56kb"]
+
+[ext_resource type="Texture2D" uid="uid://dlqhaoxja2od7" path="res://battleSystem/enemys/shadow.png" id="1_56enc"]
+[ext_resource type="Texture2D" uid="uid://nsspyuljvndx" path="res://battleSystem/halk_aestas/Border.png" id="1_xuqxf"]
+[ext_resource type="Texture2D" uid="uid://1oqu4st0u04v" path="res://battleSystem/halk_aestas/attack0.png" id="2_xuqxf"]
+[ext_resource type="Script" uid="uid://bbecw8kvyvtoi" path="res://battleSystem/attackButton.gd" id="3_56enc"]
+[ext_resource type="Texture2D" uid="uid://dbbef5h3o7a2v" path="res://battleSystem/halk_aestas/attack1.png" id="4_xhedy"]
+[ext_resource type="Texture2D" uid="uid://bgolo6nvm3a02" path="res://battleSystem/halk_aestas/attack2.png" id="5_56enc"]
+[ext_resource type="Texture2D" uid="uid://sm7r3ygxn86r" path="res://battleSystem/halk_aestas/playerMarc.png" id="6_mr038"]
+[ext_resource type="Texture2D" uid="uid://d2j6gubbbspg2" path="res://testing_scn/battleTest/playerHand.png" id="6_wevg8"]
+[ext_resource type="Texture2D" uid="uid://cjauva0rjob2l" path="res://battleSystem/halk_aestas/player.png" id="9_mr038"]
+
+[sub_resource type="Animation" id="Animation_ll1ao"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("attackButtons/VBoxContainer/attack0:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attackButtons/VBoxContainer/attack1:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attackButtons/VBoxContainer/attack2:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("playerHand:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_02mim"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("attackButtons/VBoxContainer/attack0:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.36, 1.36), Vector2(1.165, 1.165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attackButtons/VBoxContainer/attack1:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attackButtons/VBoxContainer/attack2:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("playerHand:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gupnx"]
+resource_name = "attack1"
+length = 0.56666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("attackButtons/VBoxContainer/attack1:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.425, 1.425), Vector2(1.165, 1.165)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attackButtons/VBoxContainer/attack0:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attackButtons/VBoxContainer/attack2:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("playerHand:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.22),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3996804]
+}
+
+[sub_resource type="Animation" id="Animation_i3s6k"]
+resource_name = "attack2"
+length = 0.56666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("attackButtons/VBoxContainer/attack1:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("attackButtons/VBoxContainer/attack0:offset_transform_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attackButtons/VBoxContainer/attack2:offset_transform_scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.275, 1.275), Vector2(1.19, 1.19)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("playerHand:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.26),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.59864795]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba0rk"]
+_data = {
+&"RESET": SubResource("Animation_ll1ao"),
+&"attack0": SubResource("Animation_02mim"),
+&"attack1": SubResource("Animation_gupnx"),
+&"attack2": SubResource("Animation_i3s6k")
+}
+
+[node name="halk_aestas_in_battle" type="Control" unique_id=1832431900]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=526685610]
+modulate = Color(1, 1, 1, 0.64705884)
+position = Vector2(303, 485)
+texture = ExtResource("1_56enc")
+
+[node name="player" type="TextureRect" parent="." unique_id=894499925]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 159.0
+offset_right = 365.0
+offset_bottom = 486.0
+texture = ExtResource("9_mr038")
+
+[node name="border" type="TextureRect" parent="." unique_id=1454418691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_xuqxf")
+
+[node name="attackButtons" type="Control" parent="." unique_id=202440632]
+anchors_preset = 0
+offset_left = 380.0
+offset_top = 478.0
+offset_right = 766.0
+offset_bottom = 726.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="attackButtons" unique_id=1769740165]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="attack0" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=1562771872 node_paths=PackedStringArray("animation_player")]
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_xuqxf")
+script = ExtResource("3_56enc")
+animation_player = NodePath("../../../AnimationPlayer")
+
+[node name="attack1" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=401176617 node_paths=PackedStringArray("animation_player")]
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("4_xhedy")
+script = ExtResource("3_56enc")
+animation_player = NodePath("../../../AnimationPlayer")
+
+[node name="attack2" type="TextureRect" parent="attackButtons/VBoxContainer" unique_id=1967706618 node_paths=PackedStringArray("animation_player")]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -26)
+mouse_default_cursor_shape = 2
+texture = ExtResource("5_56enc")
+script = ExtResource("3_56enc")
+animation_player = NodePath("../../../AnimationPlayer")
+
+[node name="playerHand" type="TextureRect" parent="." unique_id=1991434105]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 469.0
+offset_right = 394.0
+offset_bottom = 516.0
+pivot_offset = Vector2(0, 20)
+mouse_filter = 2
+texture = ExtResource("6_wevg8")
+
+[node name="playerComplete" type="TextureRect" parent="." unique_id=1793097036]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 353.0
+offset_right = 204.0
+offset_bottom = 721.0
+mouse_filter = 2
+texture = ExtResource("6_mr038")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1999137149]
+libraries/ = SubResource("AnimationLibrary_ba0rk")
+
+[connection signal="mouse_entered" from="attackButtons/VBoxContainer/attack0" to="attackButtons/VBoxContainer/attack0" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="attackButtons/VBoxContainer/attack1" to="attackButtons/VBoxContainer/attack1" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="attackButtons/VBoxContainer/attack2" to="attackButtons/VBoxContainer/attack2" method="_on_mouse_entered"]
