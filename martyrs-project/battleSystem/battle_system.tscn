@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://de6ywr0ruhari" path="res://battleSystem/battle_systemInterpreter.gd" id="1_qmdna"]
 [ext_resource type="PackedScene" uid="uid://c1srmw2dj56kb" path="res://battleSystem/halk_aestas/halk_aestas_in_battle.tscn" id="2_2gtj5"]
+[ext_resource type="Script" uid="uid://32qdvbmn2xor" path="res://battleSystem/battle_turn_control.gd" id="2_qrkrl"]
 [ext_resource type="PackedScene" uid="uid://bglldor5t4pb7" path="res://battleSystem/mara_seerose/mara_seerose_in_battle.tscn" id="3_xy2hb"]
 [ext_resource type="PackedScene" uid="uid://brokdmlfk2gsr" path="res://battleSystem/halk_aestas/turn_halk.tscn" id="4_2315y"]
 [ext_resource type="PackedScene" uid="uid://b24btsik6hutw" path="res://battleSystem/mara_seerose/turn_mara.tscn" id="5_4kn55"]
 [ext_resource type="PackedScene" uid="uid://7mk5p6elp31i" path="res://battleSystem/enemys/enemy_angel_0.tscn" id="6_4kn55"]
+[ext_resource type="PackedScene" uid="uid://b5rry2yp7sidu" path="res://battleSystem/enemys/enemy_angel_1.tscn" id="7_0cfqk"]
+[ext_resource type="PackedScene" uid="uid://ddtot3p2wnyc7" path="res://battleSystem/enemys/enemy_angel_2.tscn" id="8_r65ws"]
 
-[node name="battleSystem" type="Control" unique_id=830810056 node_paths=PackedStringArray("preloader")]
+[node name="battleSystem" type="Control" unique_id=830810056 node_paths=PackedStringArray("players_preloader", "enemys_preloader")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,16 +19,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qmdna")
 battle_path = "C:/Datos/.GodotProjects/martyrsProject/martyrsProject/martyrs-project/battleSystem/battleStarter.btl"
-preloader = NodePath("ResourcePreloader")
+players_preloader = NodePath("playerPreloader")
+enemys_preloader = NodePath("enemyPreloader")
 
-[node name="ResourcePreloader" type="ResourcePreloader" parent="." unique_id=1003945447]
+[node name="battleTurnControl" type="Node" parent="." unique_id=672380253 node_paths=PackedStringArray("rootNode", "playersNode", "playersTurnOrder", "enemysNode")]
+script = ExtResource("2_qrkrl")
+rootNode = NodePath("..")
+playersNode = NodePath("../players")
+playersTurnOrder = NodePath("../playerTurnOrder")
+enemysNode = NodePath("../enemy")
+
+[node name="playerPreloader" type="ResourcePreloader" parent="." unique_id=1003945447]
 resources = [PackedStringArray("Halk_Aestas", "Mara_Seerose", "Turn_Halk_Aestas", "Turn_Mara_Seerose", "enemy_angel_0"), [ExtResource("2_2gtj5"), ExtResource("3_xy2hb"), ExtResource("4_2315y"), ExtResource("5_4kn55"), ExtResource("6_4kn55")]]
 
-[node name="enemy" type="HBoxContainer" parent="." unique_id=799489774]
+[node name="enemyPreloader" type="ResourcePreloader" parent="." unique_id=1136858577]
+resources = [PackedStringArray("normal0", "normal1", "normal2"), [ExtResource("6_4kn55"), ExtResource("7_0cfqk"), ExtResource("8_r65ws")]]
+
+[node name="enemy" type="HFlowContainer" parent="." unique_id=467783849]
 layout_mode = 0
-offset_left = 446.0
+offset_left = 361.0
 offset_top = 1.0
-offset_right = 1070.0
+offset_right = 1312.0
 offset_bottom = 330.0
 alignment = 1
 
@@ -41,7 +55,10 @@ mouse_filter = 2
 [node name="playerTurnOrder" type="VBoxContainer" parent="." unique_id=2134881222]
 layout_mode = 0
 offset_left = 1195.0
-offset_top = 475.0
+offset_top = 454.0
 offset_right = 1280.0
-offset_bottom = 609.0
+offset_bottom = 588.0
 theme_override_constants/separation = 12
+
+[connection signal="child_entered_tree" from="players" to="battleTurnControl" method="_on_players_child_entered_tree"]
+[connection signal="child_entered_tree" from="playerTurnOrder" to="battleTurnControl" method="_on_player_turn_order_child_entered_tree"]

@@ -1,7 +1,45 @@
 [gd_scene format=3 uid="uid://7mk5p6elp31i"]
 
-[ext_resource type="Texture2D" uid="uid://cs5jjouo1xhxn" path="res://battleSystem/enemys/ennemy0.png" id="1_agcwh"]
 [ext_resource type="Texture2D" uid="uid://dlqhaoxja2od7" path="res://battleSystem/enemys/shadow.png" id="1_opwqx"]
+[ext_resource type="Texture2D" uid="uid://dk7pjyft6067p" path="res://battleSystem/enemys/enemy0.png" id="2_opwqx"]
+
+[sub_resource type="Animation" id="Animation_opwqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uk1j7"]
+resource_name = "idle"
+length = 4.0333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 3.2666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -36.065), Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tstux"]
+_data = {
+&"RESET": SubResource("Animation_opwqx"),
+&"idle": SubResource("Animation_uk1j7")
+}
 
 [node name="enemy_angel0" type="Control" unique_id=1946177216]
 custom_minimum_size = Vector2(310, 329)
@@ -16,11 +54,16 @@ offset_transform_enabled = true
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=397427288]
 modulate = Color(1, 1, 1, 0.61960787)
+z_index = -1
 position = Vector2(119, 328)
 texture = ExtResource("1_opwqx")
 
 [node name="texture" type="TextureRect" parent="." unique_id=1314460810]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_agcwh")
+offset_right = 310.0
+offset_bottom = 329.0
+texture = ExtResource("2_opwqx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1836454230]
+libraries/ = SubResource("AnimationLibrary_tstux")
+autoplay = &"idle"

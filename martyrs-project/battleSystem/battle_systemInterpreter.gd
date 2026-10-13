@@ -1,7 +1,8 @@
 extends Control
 
 @export_global_file("*.btl") var battle_path:String
-@export var preloader:ResourcePreloader
+@export var players_preloader:ResourcePreloader
+@export var enemys_preloader:ResourcePreloader
 
 func load_btl(path:String) -> String:
 	
@@ -44,33 +45,37 @@ func parse_battle(battle_text:String) -> Array:
 func interpretate_battle(parser_info:Array):
 	
 	var playerVisibility = true
+	var enemy_type = ""
 	for i in range(0, len(parser_info)-1):
 
 		var opecode = parser_info[i]
 		var instruction = parser_info[i+1]
 
 		if opecode == "PLAYER":
-			var player_scn:PackedScene = preloader.get_resource(instruction)
+			var player_scn:PackedScene = players_preloader.get_resource(instruction)
 			var player_instance = player_scn.instantiate()
 			self.get_node("players").add_child(player_instance)
-			player_instance.visible = playerVisibility
+			if !playerVisibility:
+				player_instance.get_node("switch").play("exit")
+				player_instance.get_node("switch").advance(0.60)
+				player_instance.visible = false
 			if playerVisibility: 
 				playerVisibility = false
 
-			var player_turn_scn:PackedScene = preloader.get_resource("Turn_"+instruction)
+			var player_turn_scn:PackedScene = players_preloader.get_resource("Turn_"+instruction)
 			var player_turn_instance = player_turn_scn.instantiate()
 			self.get_node("playerTurnOrder").add_child(player_turn_instance)
 
-		if opecode == "VISIBLE_ENEMY":
-			pass
 		if opecode == "ENEMY_TYPE":
-			pass
+			enemy_type = instruction
+
 		if opecode == "ENEMY_NUMBER":
 			for j in range(0, int(instruction)):
-				var enemy_scn:PackedScene = preloader.get_resource("enemy_angel_0")
+				var enemy_scn:PackedScene = enemys_preloader.get_resource(enemy_type+str(randi_range(0, 2)))
 				var enemy_instance = enemy_scn.instantiate()
 				self.get_node("enemy").add_child(enemy_instance)
-				enemy_instance.offset_transform_position += Vector2(randi_range(0, 20)*-1, randi_range(0, 150))
+				enemy_instance.offset_transform_position += Vector2(randi_range(0, 20)*-1, randi_range(0, 150))#no es problema del interoprete
+				enemy_instance.get_node("AnimationPlayer").seek(float(randi_range(0, 2)+float(randi_range(0, 9))/10), true) #no es problema del interprete
 			
 
 		

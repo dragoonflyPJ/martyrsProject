@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://ddtot3p2wnyc7"]
+
+[ext_resource type="Texture2D" uid="uid://dlqhaoxja2od7" path="res://battleSystem/enemys/shadow.png" id="1_rsu5m"]
+[ext_resource type="Texture2D" uid="uid://dayirdyg32fyf" path="res://battleSystem/enemys/enemy2.png" id="2_ab4wr"]
+
+[sub_resource type="Animation" id="Animation_rsu5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ab4wr"]
+resource_name = "idle"
+length = 3.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4966667, 2.32),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 34.5), Vector2(0, -58.84)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93, 1.1333333, 1.2666667, 1.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.3996804, -0.4537856, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31v0s"]
+_data = {
+&"RESET": SubResource("Animation_rsu5m"),
+&"idle": SubResource("Animation_ab4wr")
+}
+
+[node name="enemy_angel2" type="Control" unique_id=1946177216]
+custom_minimum_size = Vector2(310, 329)
+layout_mode = 3
+anchor_right = 0.246
+anchor_bottom = 0.46100003
+offset_right = 0.11999512
+offset_bottom = 0.07998657
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=397427288]
+modulate = Color(1, 1, 1, 0.61960787)
+z_index = -1
+position = Vector2(126, 305)
+texture = ExtResource("1_rsu5m")
+
+[node name="texture" type="TextureRect" parent="." unique_id=1314460810]
+layout_mode = 0
+offset_right = 236.0
+offset_bottom = 280.0
+pivot_offset = Vector2(124.56, 0)
+texture = ExtResource("2_ab4wr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=43229071]
+libraries/ = SubResource("AnimationLibrary_31v0s")
+autoplay = &"idle"
+speed_scale = 0.707

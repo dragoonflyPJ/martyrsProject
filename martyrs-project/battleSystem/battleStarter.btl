@@ -1,10 +1,18 @@
-PLAYER: Halk_Aestas
 PLAYER: Mara_Seerose
-
-VISIBLE_ENEMY: True
+PLAYER: Halk_Aestas
 
 ENEMY_TYPE: normal
 
-ENEMY_NUMBER: 1
+ENEMY_NUMBER: 3
 
 *
+
+--Playable Characters--
+    Halk_Aestas
+    Mara_Seerose
+
+--Type of Enemys--
+    normal
+
+--Max Enemy Number-- : 3
+
