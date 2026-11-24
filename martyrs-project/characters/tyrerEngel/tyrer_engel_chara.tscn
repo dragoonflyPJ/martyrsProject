@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cjvycs1ph7qn3"]
+
+[ext_resource type="Script" uid="uid://c750qktxujyu6" path="res://characters/tyrerEngel/tyrer_engel_chara.gd" id="1_8udhq"]
+[ext_resource type="Texture2D" uid="uid://dgyqwlrtjwy45" path="res://characters/tyrerEngel/Tyrer Engel.png" id="1_gfdye"]
+[ext_resource type="Texture2D" uid="uid://blehkmpt6b8wo" path="res://characters/tyrerEngel/selfUI/border.png" id="3_dgkip"]
+[ext_resource type="Texture2D" uid="uid://mqgoe80c4sdf" path="res://characters/tyrerEngel/selfUI/bars.png" id="5_6ppef"]
+[ext_resource type="Texture2D" uid="uid://bjqrvs10066o1" path="res://characters/tyrerEngel/selfUI/inventory.png" id="6_ntpx6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lsdve"]
+radius = 65.0
+height = 218.0
+
+[node name="TyrerEngel_chara" type="CharacterBody2D" unique_id=101939604]
+script = ExtResource("1_8udhq")
+maxspeed = 1000
+accel = 5000
+friction = 4000
+
+[node name="chara_spr" type="Sprite2D" parent="." unique_id=1814094596]
+texture = ExtResource("1_gfdye")
+
+[node name="chara_collision" type="CollisionShape2D" parent="." unique_id=261151534]
+position = Vector2(23, 203)
+shape = SubResource("CapsuleShape2D_lsdve")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1256735239]
+zoom = Vector2(0.4, 0.4)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1288711580]
+
+[node name="UI" type="Control" parent="UI" unique_id=1714605752]
+top_level = true
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="bg0" type="ColorRect" parent="UI/UI" unique_id=148353393]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 239.0
+offset_bottom = 718.0
+color = Color(0.22745098, 0.18039216, 0.14901961, 1)
+
+[node name="bg1" type="ColorRect" parent="UI/UI/bg0" unique_id=1933590809]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 551.0
+offset_right = 1275.0
+offset_bottom = 715.0
+color = Color(0.22745098, 0.18039216, 0.14901961, 1)
+
+[node name="border" type="TextureRect" parent="UI/UI" unique_id=1796723791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dgkip")
+
+[node name="panelBorder" type="TextureRect" parent="UI/UI" unique_id=1725159577]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -259.0
+offset_top = -153.0
+offset_right = 603.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_6ppef")
+stretch_mode = 2
+
+[node name="items" type="TextureRect" parent="UI/UI" unique_id=588362229]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 73.0
+offset_top = -301.0
+offset_right = 163.0
+offset_bottom = 121.0
+grow_vertical = 2
+texture = ExtResource("6_ntpx6")
+stretch_mode = 2
+
+[node name="character" type="TextureRect" parent="UI/UI" unique_id=8329553]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 331.0
+offset_right = 359.0
+offset_bottom = 861.0
+texture = ExtResource("1_gfdye")
+expand_mode = 1

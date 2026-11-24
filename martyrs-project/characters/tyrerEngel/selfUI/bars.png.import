@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://56f5h1bakiwi"
-path="res://.godot/imported/bg.png-609a69ad7c40768cbd0964b8ca9e6ca6.ctex"
+uid="uid://mqgoe80c4sdf"
+path="res://.godot/imported/bars.png-8ea0a75dfc3f6f8c73e9a0a0c9a2902b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://testing_scn/bg.png"
-dest_files=["res://.godot/imported/bg.png-609a69ad7c40768cbd0964b8ca9e6ca6.ctex"]
+source_file="res://characters/tyrerEngel/selfUI/bars.png"
+dest_files=["res://.godot/imported/bars.png-8ea0a75dfc3f6f8c73e9a0a0c9a2902b.ctex"]
 
 [params]
 

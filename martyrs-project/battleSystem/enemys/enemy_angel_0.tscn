@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7mk5p6elp31i"]
 
 [ext_resource type="Texture2D" uid="uid://dlqhaoxja2od7" path="res://battleSystem/enemys/shadow.png" id="1_opwqx"]
+[ext_resource type="Script" uid="uid://neks0upvasag" path="res://battleSystem/enemys/class_enemy.gd" id="1_uk1j7"]
 [ext_resource type="Texture2D" uid="uid://dk7pjyft6067p" path="res://battleSystem/enemys/enemy0.png" id="2_opwqx"]
 
 [sub_resource type="Animation" id="Animation_opwqx"]
@@ -51,6 +52,15 @@ offset_bottom = 0.07998657
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
+
+[node name="classEnemy" type="Node" parent="." unique_id=469377752]
+script = ExtResource("1_uk1j7")
+altered_state = {
+"burn": false,
+"ice": true,
+"love": false,
+"poison": true
+}
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=397427288]
 modulate = Color(1, 1, 1, 0.61960787)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqgoe80c4sdf"
-path="res://.godot/imported/bars.png-01b06d78cd43746b835438ceecb065e3.ctex"
+uid="uid://blehkmpt6b8wo"
+path="res://.godot/imported/border.png-cd4f4d64543551db86ed49111e042a7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://testing_scn/bars.png"
-dest_files=["res://.godot/imported/bars.png-01b06d78cd43746b835438ceecb065e3.ctex"]
+source_file="res://characters/tyrerEngel/selfUI/border.png"
+dest_files=["res://.godot/imported/border.png-cd4f4d64543551db86ed49111e042a7d.ctex"]
 
 [params]
 
